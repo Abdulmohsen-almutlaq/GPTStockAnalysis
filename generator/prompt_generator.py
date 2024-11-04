@@ -21,67 +21,84 @@ class PromptGenerator:
         indicators_text = "\n".join([f"- **{key}:** {value}" for key, value in self.indicators.items()])
 
         prompts = {
-            '1': f"""Analysis with Image: You are an experienced day trader preparing to enter a trade. 
-        Objective is to analyze the price and volume based on the following inputs:
+            '1': f"""**Advanced Image and Market Analysis:**
+        You are an elite day trader with decades of experience and a deep understanding of market psychology and advanced technical analysis. Your objective is to perform a comprehensive analysis of the market based on the following inputs:
         - **Timeframe:** {self.timeframe_label}
-        - **Readings:** {self.indicators}
+        - **Indicators and Readings:** {self.indicators}
 
         **Instructions:**
-        1. **Analysis:**
-           - Analyze the image to determine if indications are accurate.
-           - Analyze candlestick patterns using the ICT trading strategy.
-        2. **Recommendation:**
-           - Suggest a **Put** or **Call** position based on your analysis.
-           - Provide a confidence level percentage.
-           - Specify contract type and expiration date.
-           
-           
+        1. **Deep Analysis:**
+           - Examine the provided image meticulously to validate the accuracy of the indications.
+           - Utilize advanced ICT (Inner Circle Trader) trading strategies to dissect candlestick patterns, including concepts like Smart Money Concepts (SMC), Market Maker Models (MMM), and Wyckoff Schematics.
+           - Consider macroeconomic factors, market sentiment, and recent news that could impact the asset within the given timeframe.
+        2. **Strategic Recommendation:**
+           - Decide on a **Put** or **Call** position based on a synthesis of your technical and fundamental analysis.
+           - Provide a **confidence level percentage**, explaining the rationale behind it with reference to specific data points.
+           - Specify the optimal **contract type** (e.g., options, futures) and **expiration date**, justifying your choices in terms of risk management and potential ROI.
         3. **Example Analysis:**
-            think twice before makeing decision
-           - Moving Averages, RSI, Stochastic Oscillator, etc. analysis...
+           - *Detailed analysis of Moving Averages, RSI divergences, Stochastic Oscillator crossovers, Fibonacci retracement levels, etc.*
            - **Decision:** Call option
-           - **Confidence Level:** any prcentage that you think is right also think twice before makeing decision
-           - **Contract Expiration:** 1-2 weeks
-                    """,
+           - **Confidence Level:** 85% (due to bullish divergence on RSI and strong support at Fibonacci 61.8% level)
+           - **Contract Expiration:** 2 weeks (aligning with expected time for pattern completion)
+        """,
 
-            '2': f"""Profitable Analysis Strategy:
-        Act as an experienced day trader. Objective is to analyze price, volume, and candlestick patterns for {self.timeframe_label} and {self.indicators}. 
-        - Focus on identifying buying or selling opportunities based on technical indicators and historical data.
-        - Provide a short summary and recommended prices.
-                    """,
+            '2': f"""**Comprehensive Profitable Analysis Strategy:**
+        Act as a veteran day trader with expertise in exploiting market inefficiencies. Your objective is to analyze price action, volume, and intricate candlestick patterns for {self.timeframe_label} and {self.indicators}.
+        - Integrate advanced technical indicators with historical data to identify high-probability buying or selling opportunities.
+        - Consider patterns such as Elliott Waves, Harmonic Patterns (e.g., Gartley, Butterfly), and Ichimoku Clouds.
+        - Provide a concise yet thorough summary, including entry and exit price recommendations, risk-reward ratios, and potential market catalysts.
 
-            '3': f"""Price Analysis:
-        As a day trader using ICT methodologies, analyze {self.indicators} and {self.timeframe_label}.
-        - Focus on ICT concepts like liquidity pools, order blocks, fair value gaps.
-        - Suggest **Call** or **Put** based on confidence and prices.
-                    """,
+        """,
 
-            '4': f"""Market Structure Analysis:
-        Analyze price action over the given timeframe and identify key market structure elements:
-        1. Trend identification (uptrend, downtrend, consolidation).
-        2. Support and resistance levels.
-        3. Potential breakout points, using {self.indicators}.
-                    """,
+            '3': f"""**In-Depth Price Analysis with ICT Methodologies:**
+        As a seasoned day trader specializing in ICT strategies, analyze {self.indicators} and {self.timeframe_label} with a focus on the following:
+        - Delve into ICT concepts such as liquidity pools, order blocks, fair value gaps, and imbalance zones.
+        - Assess market maker manipulation patterns and identify potential stop hunts.
+        - Provide a recommendation for a **Call** or **Put** position, supported by detailed confidence levels, precise entry and exit prices, and the underlying rationale.
 
-            '5': f"""Detailed Price and Image Analysis:
-        You are an experienced day trader preparing to enter a trade. Objective is to analyze price and volume based on inputs:
+        """,
+
+            '4': f"""**Advanced Market Structure and Forecasting Analysis:**
+        Perform a comprehensive analysis of the price action over the specified timeframe, focusing on key market structure elements:
+        1. **Trend Analysis:**
+           - Determine the primary and secondary trends (uptrend, downtrend, consolidation) using multi-timeframe analysis.
+        2. **Critical Support and Resistance Levels:**
+           - Identify and validate significant horizontal levels, trendlines, and pivot points.
+           - Analyze volume at price (Volume Profile) to detect high-interest price zones.
+        3. **Potential Breakout and Reversal Points:**
+           - Use {self.indicators} to forecast breakout probabilities, including Bollinger Bands, Keltner Channels, and Average True Range (ATR).
+           - Evaluate the impact of impending economic events or earnings reports.
+        4. **Predictive Modeling:**
+           - Apply statistical models or machine learning insights to anticipate future price movements.
+
+        """,
+
+            '5': f"""**Detailed Technical and Image Analysis with Precision Pricing:**
+        You are a highly experienced day trader about to make a significant trade. Your objective is to analyze price action and volume meticulously based on the following inputs:
         - **Timeframe:** {self.timeframe_label}
-        - **Readings:** {self.indicators}
+        - **Indicators and Readings:** {self.indicators}
+
         **Instructions:**
-        1. **Analysis:**
-           - Use technical indicators.
-           - Analyze the image for accuracy.
-        2. **Recommendation:**
-           - Suggest a **Put** or **Call** position.
-        3. **Pricing:**
-           - Provide entry, take-profit, and stop-loss prices in the exact format below:
+        1. **Comprehensive Analysis:**
+           - Employ a combination of technical indicators (e.g., MACD, ADX, Parabolic SAR) and chart patterns (e.g., Head and Shoulders, Double Tops/Bottoms).
+           - Scrutinize the provided image to confirm indicator readings and uncover any hidden patterns or anomalies.
+        2. **Strategic Recommendation:**
+           - Decide between a **Put** or **Call** position, providing clear justification for your choice.
+        3. **Precise Pricing Strategy:**
+           - Calculate and provide exact figures for entry, take-profit, and stop-loss levels, ensuring they align with key support/resistance levels and risk management principles.
+           - Present the prices in the exact format below:
              ```
-             - ENTRY =
-             - TAKE-PROFIT =
-             - STOPLOSS =
+             - ENTRY = [exact price]
+             - TAKE-PROFIT = [exact price]
+             - STOP-LOSS = [exact price]
              ```
-        Example Response:
-        Only summary, prices, and recommendation.
-                    """
-        }
+        **Example Response:**
+        - *After thorough analysis, including the identification of a bullish pennant formation and increasing volume, the following is recommended:*
+        - **Decision:** Call option
+        - **Pricing:**
+        -ENTRY = $150.00
+        -TAKE-PROFIT = $160.00
+        -STOP-LOSS = $147.50
+        """,
+}
         return prompts.get(choice, "Invalid choice")
