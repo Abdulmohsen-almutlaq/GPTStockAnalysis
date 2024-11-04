@@ -10,7 +10,8 @@ class PromptGenerator:
             '2': "Profitable Analysis Strategy: Identify buying/selling opportunities using technical indicators.",
             '3': "Price Analysis: Use ICT trading methods to analyze prices and suggest a Call or Put position.",
             '4': "Market Structure Analysis: Examine key market structure elements like trends and breakout points.",
-            '5': "Detailed Price and Image Analysis: Analyze price action and suggest trades with entry, take-profit, and stop-loss."
+            '5': "Detailed Price and Image Analysis: Analyze price action and suggest trades with entry, take-profit, and stop-loss.",
+            '6':"Head and Shoulders, Double Top/Bottom, Triangles, Flags, Pennants, Wedges, Channels, Cup and Handle,"
         }
         print("\nSelect a Prompt Type:")
         for key, summary in summaries.items():
@@ -100,5 +101,48 @@ class PromptGenerator:
         -TAKE-PROFIT = $160.00
         -STOP-LOSS = $147.50
         """,
+            '6':f"""- **Timeframe:** {self.timeframe_label}
+        - **Indicators and Readings:** {self.indicators}
+            Please conduct an in-depth analysis of the attached financial chart image to identify any common technical chart patterns present. Your analysis should include, but is not limited to, the following:
+
+Pattern Identification:
+
+Identify all recognizable technical chart patterns (e.g., Head and Shoulders, Double Top/Bottom, Triangles, Flags, Pennants, Wedges, Channels, Cup and Handle, etc.).
+Specify the exact location of each pattern on the chart, including the relevant time frames and price levels.
+Detailed Description:
+
+Provide a thorough explanation of each identified pattern, detailing its formation process and key characteristics.
+Explain the significance of trendlines, support and resistance levels, and how they relate to the pattern.
+Volume Analysis:
+
+Analyze the trading volume corresponding with each pattern.
+Discuss how volume trends support or contradict the identified patterns.
+Technical Indicators:
+
+Incorporate other technical indicators present on the chart (e.g., Moving Averages, RSI, MACD, Bollinger Bands).
+Explain how these indicators confirm or challenge the validity of the identified patterns.
+Implications for Future Price Movements:
+
+Assess the potential bullish or bearish implications of each pattern.
+Provide historical context or statistical data regarding the reliability of each pattern in forecasting future price movements.
+Trading Strategies:
+
+Suggest potential trading strategies based on the identified patterns, including optimal entry and exit points.
+Include recommendations for stop-loss and take-profit levels.
+Discuss risk management considerations associated with these strategies.
+Multiple Time Frame Analysis:
+
+If applicable, analyze the chart across different time frames (e.g., daily, weekly, monthly).
+Explain how patterns in different time frames may interact or influence overall market sentiment.
+Confidence Levels and Alternative Scenarios:
+
+Assign a confidence level to each identified pattern based on its clarity and supporting evidence.
+Mention any alternative interpretations or conflicting signals that could affect the analysis.
+Discuss how market conditions or external factors might influence the effectiveness of the patterns.
+Conclusion:
+
+Summarize the key findings of your analysis.
+Provide a reasoned outlook on potential future price movements based on the combined evidence from patterns and indicators.
+Please ensure that your analysis is comprehensive, precise, and utilizes advanced technical analysis techniques. Use professional language appropriate for a financial analyst's report, and strive to provide the most accurate interpretation possible."""
 }
         return prompts.get(choice, "Invalid choice")
