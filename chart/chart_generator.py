@@ -8,13 +8,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import (
     WebDriverException,
-    TimeoutException,
-    NoSuchElementException
+    TimeoutException
 )
 import time
 import logging
 import tempfile
-import os
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)  # Configure logging level
@@ -78,7 +76,7 @@ class ChartGenerator:
         """
         # Configure Chrome options
         chrome_options = Options()
-        chrome_options.add_argument("--headless")
+        chrome_options.add_argument("--headless")  # Run headless for cloud
         chrome_options.add_argument("--disable-gpu")
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
@@ -103,15 +101,10 @@ class ChartGenerator:
                 logger.info(f"Opened temporary HTML file at {temp_html_path.as_uri()}")
 
                 # Wait until the TradingView widget is loaded
-                try:
-                    # Wait up to 30 seconds for the widget to load
-                    WebDriverWait(driver, 30).until(
-                        EC.presence_of_element_located((By.ID, "tradingview_chart"))
-                    )
-                    logger.info("TradingView widget loaded successfully.")
-                except TimeoutException:
-                    logger.error("TradingView widget failed to load within the timeout period.")
-                    raise TimeoutException("TradingView widget failed to load within the timeout period.")
+                WebDriverWait(driver, 30).until(
+                    EC.presence_of_element_located((By.ID, "tradingview_chart"))
+                )
+                logger.info("TradingView widget loaded successfully.")
 
                 # Additional wait to ensure the widget fully renders
                 time.sleep(5)  # Adjust as necessary
@@ -122,20 +115,17 @@ class ChartGenerator:
 
             except WebDriverException as wd_e:
                 logger.error(f"Selenium WebDriver error: {wd_e}")
-                raise WebDriverException(f"Selenium WebDriver error: {wd_e}")
-            except TimeoutException as te:
-                logger.error(f"Timeout error: {te}")
-                raise TimeoutException(f"Timeout error: {te}")
+                raise
+            except TimeoutException:
+                logger.error("TradingView widget failed to load within the timeout period.")
+                raise
             except Exception as e:
                 logger.error(f"An unexpected error occurred: {e}")
-                raise e
+                raise
             finally:
                 # Ensure the driver is closed to free resources
-                try:
+                if 'driver' in locals():
                     driver.quit()
                     logger.info("WebDriver closed successfully.")
-                except Exception as quit_error:
-                    logger.warning(f"Failed to close WebDriver: {quit_error}")
 
         # No need to manually delete the HTML file as TemporaryDirectory handles it
-
