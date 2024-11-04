@@ -56,7 +56,19 @@ def main():
     """
     st.set_page_config(page_title="Stock Analysis App", layout="wide")
     st.title("📈 Stock Analysis App")
+    st.markdown("""
+    ## 📊 About This App
 
+    Welcome to the **Stock Analysis App**! This application empowers you to analyze stock performance, generate detailed charts, and receive insightful analyses powered by OpenAI's GPT. Whether you're an investor, trader, or just curious about stock trends, this app provides the tools you need to make informed decisions.
+
+    ### 🚀 Features:
+    - **Real-time Stock Analysis:** Get up-to-date information on your favorite stocks.
+    - **Custom Timeframes:** Choose from various timeframes to suit your analysis needs.
+    - **Automated Chart Generation:** Generate and capture screenshots of stock charts effortlessly.
+    - **GPT-Powered Insights:** Receive detailed analyses and recommendations based on your selected parameters.
+
+    ### 🔗 [View the Source Code on GitHub](https://github.com/yourusername/your-repo)
+    """)
     # Sidebar for API Key Input (Streamlit Secrets)
     st.sidebar.header("🔑 OpenAI API Key")
     if "API_KEY" in st.secrets:
