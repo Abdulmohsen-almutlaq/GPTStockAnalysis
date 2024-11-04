@@ -2,7 +2,6 @@ from pathlib import Path
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
@@ -85,6 +84,10 @@ class ChartGenerator:
         chrome_options.add_argument("--disable-infobars")
         chrome_options.add_argument("--log-level=3")  # Suppress warnings
 
+        # Specify the path to the system-installed chromedriver
+        chromedriver_path = "/usr/bin/chromedriver"
+        service = Service(executable_path=chromedriver_path)
+
         # Create a temporary directory for HTML file
         with tempfile.TemporaryDirectory() as tmp_dir:
             temp_html_path = Path(tmp_dir) / "temp_chart.html"
@@ -92,7 +95,6 @@ class ChartGenerator:
 
             try:
                 # Initialize WebDriver
-                service = Service(ChromeDriverManager().install())
                 driver = webdriver.Chrome(service=service, options=chrome_options)
                 logger.info("WebDriver initialized successfully.")
 
