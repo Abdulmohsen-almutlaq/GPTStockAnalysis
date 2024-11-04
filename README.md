@@ -6,6 +6,10 @@
 
 **GPTStockAnalysis** is a web application that allows users to analyze stock performance, generate detailed charts, and receive insightful analyses powered by OpenAI's GPT. Whether you're an investor, trader, or just curious about stock trends, this app provides the tools you need to make informed decisions.
 
+### 🌐 Live Demo
+
+Experience the app in action: [https://test101.streamlit.app/](https://test101.streamlit.app/)
+
 ## 🔧 Features
 
 - **Real-time Stock Analysis:** Get up-to-date information on your favorite stocks.
