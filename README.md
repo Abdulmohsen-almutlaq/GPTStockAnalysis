@@ -1,6 +1,6 @@
 # 📈 GPTStockAnalysis
 
-![App Screenshot](https://github.com/Abdulmohsen-almutlaq/GPTStockAnalysis/blob/main/assets/screenshot_1.png)
+![App Screenshot](https://github.com/Abdulmohsen-almutlaq/GPTStockAnalysis/image/Screenshot_1.png)
 
 ## 📊 About This App
 
