@@ -12,6 +12,7 @@ from selenium.common.exceptions import (
 import time
 import logging
 import tempfile
+import os
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)  # Configure logging level
@@ -85,7 +86,15 @@ class ChartGenerator:
         chrome_options.add_argument("--log-level=3")  # Suppress warnings
 
         # Specify the path to the system-installed chromedriver
-        chromedriver_path = "/usr/bin/chromedriver"
+        chromedriver_path = "/usr/lib/chromium-browser/chromedriver"
+
+        # Verify chromedriver exists
+        if not os.path.exists(chromedriver_path):
+            chromedriver_path = "/usr/bin/chromedriver"
+            if not os.path.exists(chromedriver_path):
+                logger.error(f"Chromedriver not found at expected paths.")
+                raise FileNotFoundError("Chromedriver not found. Please verify the installation.")
+
         service = Service(executable_path=chromedriver_path)
 
         # Create a temporary directory for HTML file
