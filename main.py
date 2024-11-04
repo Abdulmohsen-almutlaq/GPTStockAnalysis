@@ -67,7 +67,13 @@ def main():
     - **Automated Chart Generation:** Generate and capture screenshots of stock charts effortlessly.
     - **GPT-Powered Insights:** Receive detailed analyses and recommendations based on your selected parameters.
 
-    ### 🔗 [View the Source Code on GitHub](https://github.com/yourusername/your-repo)
+    ### 🛠️ How to Use:
+    1. **Enter a Stock Symbol:** Input the ticker symbol of the stock you wish to analyze (e.g., AAPL, TSLA).
+    2. **Select a Timeframe:** Choose the desired timeframe for your analysis.
+    3. **Choose Prompt Type:** Select the type of analysis prompt for GPT.
+    4. **Click "Analyze":** Let the app generate the chart and provide GPT-powered insights.
+
+    ### 🔗 [View the Source Code on GitHub](https://github.com/Abdulmohsen-almutlaq/GPTStockAnalysis)
     """)
     # Sidebar for API Key Input (Streamlit Secrets)
     st.sidebar.header("🔑 OpenAI API Key")
