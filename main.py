@@ -129,7 +129,8 @@ def main():
         '3': "Price Analysis: Use ICT trading methods to analyze prices and suggest a Call or Put position.",
         '4': "Market Structure Analysis: Examine key market structure elements like trends and breakout points.",
         '5': "Detailed Price and Image Analysis: Analyze price action and suggest trades with entry, take-profit, and stop-loss.",
-        '6': "Head and Shoulders, Double Top/Bottom, Triangles, Flags, Pennants, Wedges, Channels, Cup and Handle,"
+        '6': "Head and Shoulders, Double Top/Bottom, Triangles, Flags, Pennants, Wedges, Channels, Cup and Handle,",
+        '7' : "test"
     }
 
     # Create a list of options with summaries
