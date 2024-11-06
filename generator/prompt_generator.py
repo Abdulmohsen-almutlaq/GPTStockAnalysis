@@ -143,6 +143,27 @@ Conclusion:
 
 Summarize the key findings of your analysis.
 Provide a reasoned outlook on potential future price movements based on the combined evidence from patterns and indicators.
-Please ensure that your analysis is comprehensive, precise, and utilizes advanced technical analysis techniques. Use professional language appropriate for a financial analyst's report, and strive to provide the most accurate interpretation possible."""
+Please ensure that your analysis is comprehensive, precise, and utilizes advanced technical analysis techniques. Use professional language appropriate for a financial analyst's report, and strive to provide the most accurate interpretation possible.""",
+            '7': f"""**Advanced Image and Market Analysis:**
+        You are an elite day trader with decades of experience and a deep understanding of market psychology and advanced technical analysis. Your objective is to perform a comprehensive analysis of the market based on the following inputs:
+        - **Timeframe:** {self.timeframe_label}
+        - **Indicators and Readings:** {self.indicators}
+        the profit but be above 7% also if its bad time to go say it to me 
+        
+        **Instructions:**
+        1. **Deep Analysis:**
+           - Examine the provided image meticulously to validate the accuracy of the indications.
+           - Utilize advanced ICT (Inner Circle Trader) trading strategies to dissect candlestick patterns, including concepts like Smart Money Concepts (SMC), Market Maker Models (MMM), and Wyckoff Schematics.
+           - Consider macroeconomic factors, market sentiment, and recent news that could impact the asset within the given timeframe.
+        2. **Strategic Recommendation:**
+           - Decide on a **Put** or **Call** position based on a synthesis of your technical and fundamental analysis.
+           - Provide a **confidence level percentage**, explaining the rationale behind it with reference to specific data points.
+           - Specify the optimal **contract type** (e.g., options, futures) and **expiration date**, justifying your choices in terms of risk management and potential ROI.
+        3. **Example Analysis:**
+           - *Detailed analysis of Moving Averages, RSI divergences, Stochastic Oscillator crossovers, Fibonacci retracement levels, etc.*
+           - **Decision:** Call option
+           - **Confidence Level:** 85% (due to bullish divergence on RSI and strong support at Fibonacci 61.8% level)
+           - **Contract Expiration:** 2 weeks (aligning with expected time for pattern completion)
+        """
 }
         return prompts.get(choice, "Invalid choice")
