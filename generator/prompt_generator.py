@@ -37,6 +37,8 @@ class PromptGenerator:
            - Provide a **confidence level percentage**, explaining the rationale behind it with reference to specific data points.
            - Specify the optimal **contract type** (e.g., options, futures) and **expiration date**, justifying your choices in terms of risk management and potential ROI.
         3. **Example Analysis:**
+            -entry : ^^^$
+            -exit : ^^^$
            - *Detailed analysis of Moving Averages, RSI divergences, Stochastic Oscillator crossovers, Fibonacci retracement levels, etc.*
            - **Decision:** Call option
            - **Confidence Level:** 85% (due to bullish divergence on RSI and strong support at Fibonacci 61.8% level)
