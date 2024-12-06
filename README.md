@@ -12,7 +12,7 @@
 
 - **Real-time Stock Analysis:** Get up-to-date information on your favorite stocks.
 - **Custom Timeframes:** Choose from various timeframes to suit your analysis needs.
-- **Automated Chart Generation:** Generate and capture screenshots of stock charts effortlessly.
+- **Automated Chart Generation:** FETCH CHART and capture screenshots of stock charts effortlessly.
 - **GPT-Powered Insights:** Receive detailed analyses and recommendations based on your selected parameters.
 
 ## 🛠️ Installation
