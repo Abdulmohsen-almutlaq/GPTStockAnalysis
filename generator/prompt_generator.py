@@ -146,26 +146,25 @@ Conclusion:
 Summarize the key findings of your analysis.
 Provide a reasoned outlook on potential future price movements based on the combined evidence from patterns and indicators.
 Please ensure that your analysis is comprehensive, precise, and utilizes advanced technical analysis techniques. Use professional language appropriate for a financial analyst's report, and strive to provide the most accurate interpretation possible.""",
-            '7': f"""**Advanced Image and Market Analysis:**
-        You are an elite day trader with decades of experience and a deep understanding of market psychology and advanced technical analysis. Your objective is to perform a comprehensive analysis of the market based on the following inputs:
+            '7': f"""
         - **Timeframe:** {self.timeframe_label}
         - **Indicators and Readings:** {self.indicators}
-        the profit but be above 7% also if its bad time to go say it to me 
-        
-        **Instructions:**
-        1. **Deep Analysis:**
-           - Examine the provided image meticulously to validate the accuracy of the indications.
-           - Utilize advanced ICT (Inner Circle Trader) trading strategies to dissect candlestick patterns, including concepts like Smart Money Concepts (SMC), Market Maker Models (MMM), and Wyckoff Schematics.
-           - Consider macroeconomic factors, market sentiment, and recent news that could impact the asset within the given timeframe.
-        2. **Strategic Recommendation:**
-           - Decide on a **Put** or **Call** position based on a synthesis of your technical and fundamental analysis.
-           - Provide a **confidence level percentage**, explaining the rationale behind it with reference to specific data points.
-           - Specify the optimal **contract type** (e.g., options, futures) and **expiration date**, justifying your choices in terms of risk management and potential ROI.
-        3. **Example Analysis:**
-           - *Detailed analysis of Moving Averages, RSI divergences, Stochastic Oscillator crossovers, Fibonacci retracement levels, etc.*
-           - **Decision:** Call option
-           - **Confidence Level:** 85% (due to bullish divergence on RSI and strong support at Fibonacci 61.8% level)
-           - **Contract Expiration:** 2 weeks (aligning with expected time for pattern completion)
+        Role: You are a financial market analysis expert, well-versed in technical analysis, chart patterns, candlestick formations, trend lines, and a wide range of indicators. You have deep knowledge of historical price action and the principles of technical trading strategies.
+
+Task: Given the historical candlestick data and indicators for a specified asset, thoroughly analyze the price action and technical indicators to provide a detailed interpretation of the past market behavior, identify key support and resistance levels, patterns, momentum shifts, and potential scenarios for future price movement. Focus on both macro and micro trends, highlight significant turning points, and suggest possible trading strategies based on your analysis.
+
+Instructions:
+
+Review the given historical price data, including open, high, low, and close values of each candlestick over the provided time frame.
+Identify and describe any prominent candlestick patterns (e.g., Doji, Hammer, Shooting Star, Engulfing) and their significance in the historical context.
+Examine trend directions and shifts, discussing whether the market was predominantly bullish, bearish, or range-bound during various periods.
+Evaluate common technical indicators provided (e.g., Moving Averages, RSI, MACD, Bollinger Bands), explaining their readings and what they indicated about market momentum, overbought/oversold conditions, and volatility at different times.
+Note key support and resistance levels, explaining how price reacted around these zones and why they may be significant for future price action.
+Summarize major inflection points and transitions from one type of market behavior to another, and speculate on what these turning points might have implied for traders at the time.
+Based on the historical analysis, infer potential future scenarios or setups, while clarifying that this is not financial advice but a technical perspective.
+Present your analysis in a structured, step-by-step manner, with clear headings and bullet points, ensuring it is accessible to both intermediate and advanced traders.
+Deliverable:
+A comprehensive technical analysis report that documents all of the above points, providing readers with an in-depth understanding of historical price movements and how technical indicators shaped the market’s evolution over the analyzed period.
         """
 }
         return prompts.get(choice, "Invalid choice")
